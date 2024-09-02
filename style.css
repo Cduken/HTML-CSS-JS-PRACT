@@ -319,14 +319,13 @@ body {
     }
 
     #about .container {
-        margin-top: 100px;
         width: 415px;
         height: auto;
         font-size: 14px;
     }
 
     #services .services-container  {
-        margin-top: 85vh;
+        margin-top: 40vh;
         width: 415px;
         height: auto;
         font-size: 14px;

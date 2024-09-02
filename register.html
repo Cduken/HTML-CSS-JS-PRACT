@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Cduken</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header class="header">
+        <a href="home.html" class="logo">Cdu<span>ken</span></a>
+
+        <div class="menu-icon" id="menu-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <div class="login-form">
+            <h1>Sign Up</h1>
+
+            <form action="/login" method="post" id="register-form">
+                <div class="input-box">
+                    <span class="icon">
+                        <i class='bx bxs-envelope'></i></span>
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <i class='bx bxs-lock-alt'></i>
+                    </span>
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                </div>
+
+                <div class="input-box">
+                    <span class="icon">
+                        <i class='bx bxs-phone'></i>
+                    </span>
+                        <input type="text" name="phone_number" required maxlength="11" pattern="\d{11}" title="Phone number must be 11 digits">
+                        <label>Phone Number</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" name="remember">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="login-register">
+                    <p>Already have an account?
+                        <a href="home.html" class="register">Login</a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            const phoneNumber = document.querySelector('input[name="phone_number"]').value;
+            if (phoneNumber.length !== 11) {
+                alert('Phone number must be 11 digits.');
+                event.preventDefault();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+        });
+    });
+    </script>
+
+</body>
+</html>
